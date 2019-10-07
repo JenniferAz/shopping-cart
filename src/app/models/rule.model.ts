@@ -6,6 +6,6 @@ export class Rule {
   constructor(public id: string,
               public description: string,
               public productCodes: string[],
-              public computeDiscount: (products: Product[]) => Amount) {
+              public computeDiscount: (products: Product[]) => number) {
   }
 }

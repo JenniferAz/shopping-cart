@@ -7,6 +7,7 @@ import { Amount, Product, Rule } from '../../models'
 
 export class DatasetService {
 
+  // Products and rules. Data that could come from a server and be parsed here
   private availableProducts: Product[]
   private availableRules: Rule[]
 
@@ -22,20 +23,15 @@ export class DatasetService {
         '#0',
         '2x1 Cap offer',
         ['CAP'],
-        (productsForDiscount: Product[]) =>
-          productsForDiscount.length > 1 ?
-            new Amount(Math.floor(productsForDiscount.length / 2) *
-              productsForDiscount[0].price.value, productsForDiscount[0].price.currency)
-            : new Amount(0)
+        (productsForDiscount: Product[]) => productsForDiscount.length > 1 ?
+            Math.floor(productsForDiscount.length / 2) * productsForDiscount[0].price.value : 0
       ),
       new Rule(
         '#1',
         'x3 T-Shirt offer',
         ['TSHIRT'],
-        (productsForDiscount: Product[]) =>
-          productsForDiscount.length >= 3 ? new Amount(productsForDiscount.length *
-            (productsForDiscount[0].price.value - 19.00), productsForDiscount[0].price.currency) :
-            new Amount(0)
+        (productsForDiscount: Product[]) => productsForDiscount.length >= 3 ?
+          productsForDiscount.length * productsForDiscount[0].price.value - 19.00 : 0
       ),
       new Rule(
         '#2',
@@ -45,8 +41,7 @@ export class DatasetService {
           productsForDiscount.some(prod => prod.code === 'TSHIRT') &&
           productsForDiscount.some(prod => prod.code === 'CAP') &&
           productsForDiscount.some(prod => prod.code === 'MUG')
-            ? new Amount(7.50, productsForDiscount[0].price.currency) :
-            new Amount(0)
+            ? 7.50 : 0
       )
     ]
   }

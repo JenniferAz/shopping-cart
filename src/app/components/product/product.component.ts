@@ -14,6 +14,7 @@ export class ProductComponent {
     this._quantity = quantity
     this.computeProductTotalPrice(quantity)
   }
+  // Events to send to the father component (product-list component)
   @Output() increaseProduct = new EventEmitter()
   @Output() decreaseProduct = new EventEmitter()
   public totalPrice: number

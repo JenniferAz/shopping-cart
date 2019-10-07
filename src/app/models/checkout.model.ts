@@ -31,10 +31,12 @@ export class Checkout {
   }
 
   recomputeDiscounts(involvedProduct: Product) {
+    // Find the rules that apply to the scanned product
     const matchingRules = this.pricingRules.filter(rule => rule.productCodes.includes(involvedProduct.code))
     if (matchingRules) {
+      // Update each discount in which the product is involved with the new value computed by the rule
       matchingRules.map(rule => {
-        this.discounts.find((discount: Discount) => discount.id === rule.id).amount =
+        this.discounts.find((discount: Discount) => discount.id === rule.id).amount.value =
           rule.computeDiscount(this.products.filter(product => rule.productCodes.includes(product.code)))
       })
     }

@@ -9,6 +9,7 @@ import { DatasetService } from '../dataset/dataset.service'
 
 export class CartService {
 
+  // Cart data store and handling
   private checkoutSubject: BehaviorSubject<Checkout>
   private checkout: Checkout
 

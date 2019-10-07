@@ -10,6 +10,7 @@ export class ProductListComponent {
 
   @Input() cartProducts: Product[]
   @Input() availableProducts: Product[]
+  // Events to send to the father component (cart page)
   @Output() increaseProduct = new EventEmitter()
   @Output() decreaseProduct = new EventEmitter()
 
