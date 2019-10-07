@@ -83,3 +83,20 @@ button[type="submit"] {
   line-height: 14px;
   cursor: pointer;
 }
+
+div.discounts-total{
+  display: flex;
+  padding-top: 1em;
+  .discounts-total-text{
+    flex-basis: 100%;
+    text-transform: uppercase;
+    color: #717285;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .discounts-total-price{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

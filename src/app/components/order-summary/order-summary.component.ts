@@ -13,4 +13,10 @@ export class OrderSummaryComponent {
   @Input() subtotal: Amount
   @Input() total: Amount
 
+  getTotalDiscounts(): number {
+    return this.discounts.reduce((discountsSum, discount: Discount) => {
+      discountsSum += discount.amount.value
+      return discountsSum
+    }, 0)
+  }
 }
