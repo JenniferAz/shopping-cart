@@ -1,11 +1,15 @@
 # Shopping Cart Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+Shopping cart web application with dynamic products and pricing rules implemented with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
 
 ## Prerequisites
 - Node.js >= 10.9.0
 - npm
 - Angular CLI
+
+## Install node modules
+
+Run `npm install` to install node modules.
 
 ## Development server
 
