@@ -1,0 +1,50 @@
+.App {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 1088px;
+  max-height: 648px;
+  width: calc(100% - 64px);
+  height: calc(100% - 64px);
+  border-radius: 4px;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.products {
+  padding: 40px 32px 40px 56px;
+  font-size: 20px;
+  line-height: 25px;
+  flex: 1;
+}
+
+.product h1 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1.main {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(33, 34, 64, 0.16);
+}
+
+.summary {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 40px 32px;
+  width: 312px;
+  background-color: #f3f3f3;
+  color: #212240;
+}
+
+.summary > * {
+  width: 100%;
+}
+
+
+
+
+

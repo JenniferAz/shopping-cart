@@ -1,0 +1,14 @@
+<div id="root">
+    <main class="App">
+        <section class="products">
+            <h1 class="main">Shopping cart</h1>
+            <app-product-list [availableProducts]="availableProducts" [cartProducts]="cartProducts"
+                              (increaseProduct)="increaseProduct($event)"
+                              (decreaseProduct)="decreaseProduct($event)">
+            </app-product-list>
+        </section>
+        <app-order-summary class="summary"
+                           [items]="cartProducts?.length" [discounts]="discounts" [total]="totalPrice"
+                           [subtotal]="subtotal"></app-order-summary>
+    </main>
+</div>
