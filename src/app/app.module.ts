@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { OrderSummaryComponent, ProductComponent, ProductListComponent } from './components'
+import { CartService, DatasetService } from './providers'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { OrderSummaryComponent, ProductComponent, ProductListComponent } from '.
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CartService, DatasetService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
