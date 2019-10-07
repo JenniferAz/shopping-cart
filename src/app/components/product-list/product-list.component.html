@@ -1,0 +1,18 @@
+<ul class="products-list tableHead">
+    <li class="products-list-title row">
+        <div class="col-product">Product details</div>
+        <div class="col-quantity">Quantity</div>
+        <div class="col-price">Price</div>
+        <div class="col-total">Total</div>
+    </li>
+</ul>
+<ul class="products-list">
+    <li *ngFor="let product of availableProducts" class="row">
+    <app-product class="product row"
+                 [product]="product"
+                 [quantity]="getQuantity(product.code)"
+                 (increaseProduct)="increaseProduct.emit($event)"
+                 (decreaseProduct)="decreaseProduct.emit($event)">
+    </app-product>
+    </li>
+</ul>

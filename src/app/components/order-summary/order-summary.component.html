@@ -1,0 +1,26 @@
+<h1 class="main">Order Summary</h1>
+<ul class="summary-items wrapper border">
+    <li>
+        <span class="summary-items-number">{{items}} Items</span>
+        <span class="summary-items-price">{{subtotal?.value}}
+            <span class="currency">{{subtotal?.currency}}</span>
+        </span>
+    </li>
+</ul>
+<div class="summary-discounts wrapper-half border">
+    <h2>Discounts</h2>
+    <ul>
+        <li *ngFor="let discount of discounts">
+            <span>{{discount.description}}</span><span>-{{discount.amount.value}}{{discount.amount.currency}}</span>
+        </li>
+    </ul>
+</div>
+<div class="summary-total wrapper">
+    <ul>
+        <li>
+            <span class="summary-total-cost">Total cost</span>
+            <span class="summary-total-price">{{total?.value}}{{total?.currency}}</span>
+        </li>
+    </ul>
+    <button type="submit">Checkout</button>
+</div>
