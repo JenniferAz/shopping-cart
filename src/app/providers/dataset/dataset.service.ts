@@ -31,7 +31,7 @@ export class DatasetService {
         'x3 T-Shirt offer',
         ['TSHIRT'],
         (productsForDiscount: Product[]) => productsForDiscount.length >= 3 ?
-          productsForDiscount.length * productsForDiscount[0].price.value - 19.00 : 0
+          productsForDiscount.length * (productsForDiscount[0].price.value - 19.00) : 0
       ),
       new Rule(
         '#2',
